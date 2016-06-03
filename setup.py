@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 This is the build script for sshsocket. The dependencies are boost.python
-and libssh2
+and libssh
 """
 import distutils.core as dcore
 import distutils.extension as dext
@@ -16,7 +16,7 @@ if sys.platform == 'win32':
 include_dirs = ['./includes']
 libraries = [
     'boost_python-%d.%d' % (sys.version_info.major, sys.version_info.minor),
-    'ssh2'
+    'ssh'
 ]
 library_dirs = []
 extra_compile_args = ['-fPIC', '-std=gnu++11', '-Wall']
@@ -30,6 +30,7 @@ dcore.setup(
     license='GPLv2',
     author='Frederick Grim',
     author_email='frederick.grim@gmail.com',
+    test_suite='tests',
     ext_modules=[
         dext.Extension(
             'sshsocket', files,

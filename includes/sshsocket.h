@@ -3,6 +3,10 @@
 
 #include <boost/python.hpp>
 
+extern "C" {
+#include<libssh2.h>
+}
+
 namespace sshsocket {
 
     namespace bpy = boost::python;
@@ -17,8 +21,9 @@ class SSHSocket {
         bpy::long_ write(const bpy::str&);
         void bind(const bpy::tuple);
         int fileno();
-        void setblocking(const bool block = true);
+        void setblocking(const bool block = true) { isblocking = block; }
     private:
+        bool isblocking;
 };
 
 }

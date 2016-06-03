@@ -1,6 +1,6 @@
 # sshsocket
-This is a python module meant to mimic the sslsocket interface. This uses libssh2 and boost.python
-to provide a blocking/nonblocking socket-type interface for ssh connections
+This is a python module meant to mimic the sslsocket interface. This uses libssh and boost.python
+to provide a blocking/nonblocking socket-type interface for ssh connections.
 ```
 import sshsocket
 
